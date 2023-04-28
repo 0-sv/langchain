@@ -1,13 +1,12 @@
-from langchain import PromptTemplate, LLMChain
-from langchain.llms import OpenAI
+from argparse import ArgumentParser
+from sys import stdin
 
-llm = OpenAI(
-    model_name="gpt-4-0314"
-)
-prompt = PromptTemplate(
-    input_variables=["product"],
-    template="What is a good name for a company that makes {product}?",
-)
+from langchain.chat_models import ChatOpenAI
+from langchain.schema import HumanMessage
 
-chain = LLMChain(llm=llm, prompt=prompt)
-chain.run("colorful socks")
+parser = ArgumentParser()
+parser.add_argument("text", type=str, nargs="?", default=stdin)
+args = parser.parse_args()
+
+chat = ChatOpenAI(temperature=0.9)
+print(chat([HumanMessage(content=args.text)]))
