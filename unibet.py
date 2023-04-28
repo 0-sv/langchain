@@ -9,4 +9,4 @@ parser.add_argument("text", type=str, nargs="?", default=stdin)
 args = parser.parse_args()
 
 chat = ChatOpenAI(temperature=0.9)
-print(chat([HumanMessage(content=args.text)]))
+print(chat([HumanMessage(content=args.text)]).content)
