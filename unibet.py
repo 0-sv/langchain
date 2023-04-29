@@ -23,10 +23,14 @@ prompt = PromptTemplate(
 )
 system_message_prompt = SystemMessagePromptTemplate(prompt=prompt)
 
-chat = ChatOpenAI(temperature=0.9)
+chat = ChatOpenAI(
+    temperature=0.9,
+    model_name="gpt-4"
+)
 
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt])
 
 print(prompt.template)
 print(
-    chat(chat_prompt.format_prompt(input_language="Dutch", username="bitgo1141", text=args.text).to_messages()))
+    chat(chat_prompt.format_prompt(input_language="Dutch", username="bitgo1141", text=args.text).to_messages()).content
+)
