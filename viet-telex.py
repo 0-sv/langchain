@@ -51,13 +51,13 @@ prompt = PromptTemplate(
     
     | Character | Keys pressed | Sample input     | Sample output |
     |-----------|--------------|------------------|---------------|
-    | ă         | aw           | trang-w          | trăng         |
-    | â         | aa           | can-a            | cân           |
-    | đ         | dd           | d-dau-a          | đâu           |
-    | ê         | ee           | d-dem-e          | đêm           |
-    | ô         | oo           | nho-o            | nhô           |
-    | ơ         | ow or [      | mo-w or m[       | mơ            |
-    | ư         | uw or w or ] | tu-w or tw or t] | tư            |
+    | ă         | aw           | trangw           | trăng         |
+    | â         | aa           | cana             | cân           |
+    | đ         | dd           | ddaua            | đâu           |
+    | ê         | ee           | ddeme            | đêm           |
+    | ô         | oo           | nhoo             | nhô           |
+    | ơ         | ow           | mow              | mơ            |
+    | ư         | uw           | tuw              | tư            |
     
     Here is the table for the tone markings (the first row is the header of the table):
     
@@ -70,6 +70,15 @@ prompt = PromptTemplate(
     | Ngã (rising glottalized)   | x                      | ngax         | ngã           |
     | Nặng (falling glottalized) | j                      | nawngj       | nặng          |
     | ư                          | uw                     | tuw          | tư            |
+    
+    Please double check the telex column, it is the most important one and often wrong. 
+    Here is a sample Vietnamese paragraph to make sure you understand what we're looking for here:
+    
+    Sáng nay trời đẹp vô cùng, nắng nhẹ đủ để làm ấm không khí nhưng không gây cảm giác nóng bức. Cô bạn hàng xóm 
+    chạy qua, mỉm cười chào hỏi và hẹn tối nay cùng đi dạo công viên. Lúc nửa đêm, bầu trời được lấp đầy bởi ánh sáng 
+    lung linh từ vạn ngôi sao và ánh trăng rằm. Con mèo nhà tôi tựa vào lan can ban công, ngắm nhìn thành phố từ trên 
+    cao và phất phới đuôi theo điệu gió nhẹ. Cuộc sống đơn giản thế này đã khiến tôi cảm thấy hạnh phúc và biết ơn.
+    
     
     Here comes the input:
         {text}
