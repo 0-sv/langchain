@@ -82,7 +82,7 @@ system_message_prompt = SystemMessagePromptTemplate(prompt=prompt)
 
 chat = ChatOpenAI(
     temperature=0.9,
-    model_name="gpt-4"
+    model_name="gpt-4",
 )
 
 chat_prompt = ChatPromptTemplate.from_messages([system_message_prompt])
